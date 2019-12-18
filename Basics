@@ -1,0 +1,141 @@
+print ("Saikat")
+print (10 * 'Saikat')
+print ('Saikat\'s "iphone"')
+print (r"c:saikat\new_folder")
+
+x=10;y=5
+print(x+y)
+
+name="youtube"
+print (name)
+print (name+ ' rocks') # concatenate strings
+print (name[-2])  # reads the string from the end
+
+print (name[0:2])  #print 0,1 position of the string
+print (name [1:4]) #print 1,2,3 position of the string
+
+print (name [1:]) #print everything from the 1st position
+print (name [:4]) #print everything upto 4th position
+print ("String length: ", len(name)) #print the length of the string
+#alternate way to print mytube
+print ("my"+ name [3:])
+
+#name[0:3]="my"  # to change the text from youtube to mytube, but this throws error as string assignment can't change
+#print (name)
+
+nums= [25,12,36,89,95]
+print (nums[0:2])
+print (nums[-1], nums[-5])#prints the first and the last element
+
+values=['saikat', 89, 69, 66, 'sengupta']
+print(values[0:2])
+
+mil= [nums, values] #Output: [[25, 12, 36, 89, 95], ['saikat', 89, 69, 66, 'sengupta']]
+print (mil)
+
+nums.insert(2,88)   #Output: [25, 12, 88, 36, 89, 95]
+print(nums)
+
+nums.remove(25)     # Output: [12, 88, 36, 89, 95]
+print(nums)
+
+#to remove element by index
+nums.pop (3)        #Output: [12, 88, 36, 95]
+print(nums)
+
+#simply use nums.pop to extract the last element. The last element will be removed from the list
+print (nums.pop())
+print(nums)         #Output : [12, 88, 36]
+
+#delete elements from a list
+del nums [2:]
+print (nums)        #Output: [12, 88]
+
+#to add multiple values in a list
+nums.extend([44,56,77,21])
+print(nums)         #Output: [12, 88, 44, 56, 77, 21]
+
+print("max value: ",max(nums))
+print("min value: ",min(nums))
+print("sum value: ",sum(nums))
+
+#more on variables and address allocation
+#when two variables share the same reference, like num2=num1, python don't create two different addresses for these two variables
+#instead, it references the same address. This is how python is more efficient in memory management.
+
+my_name="Saikat Sengupta"
+print(id(my_name))
+
+num1= 20030302
+print(id(num1))
+
+num2=num1
+print(id(num2))
+
+# the below one shows same id as num1/num2.
+# This shows that the allocation of memory is not done on the variable name. It is done on the value.
+print (id(20030302))
+
+#GARBAGE COLLECTION
+#whenever you have data which is not used by any variable then they are ready for garbage collection
+#python won't keep memory allocated for some value which is not being used.
+
+PI= 3.14
+print(type(PI))
+
+#below shows how to create a range datatype
+range1= range(10)
+list1= list(range1)
+print(range1)
+print(list1)
+
+#kind of datatypes we have: None, Numeric, List, Tuple, Set, String, Range, Dictionary
+#below shows how to create a dictionary datatype
+
+dict= {'navin':'1Plus6T', 'saikat':'Iphone', 'rahul':'samsung'}
+print(dict.keys())
+print(dict.values())
+print (dict['saikat'])
+
+#converting to binary format
+# below output: 0b11001 (0b is used in the prefix to make python understand that it's a binary representation
+bin_frmt=bin (25)
+print(bin_frmt)
+
+oct_frmt=oct(25)  # output: 0o31 0o to say its octal format
+print(oct_frmt)
+
+hex_frmt= hex(25)
+print(hex_frmt)   # output: 0x19 0x to say its hex format
+
+#below segment showing how if-else work in python
+x= int(input("Enter the number"))
+if (x==1):
+    print("This is one")
+elif (x==2):
+    print("This is two")
+elif (x==3):
+    print("This is three")
+else:
+    print ("This is something else")
+
+#while loop concept in python
+i=1
+while i<=5:
+    print ("Saikat ", end="")
+    j=1
+    while (j<=4):
+        print ("Rocks!!", end="")
+        j=j+1
+    i=i+1
+    print()
+
+#for loop concept in python
+
+x={'saikat',86, 2.5}
+for i in x:
+    print (i)
+
+for i in range(1,20):
+    if (i%2==0):
+        print (str(i)+ " ", end="")
