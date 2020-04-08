@@ -6,6 +6,18 @@ https://www.codespeedy.com/create-a-registration-form-in-python-using-tkinter/
 https://djangocentral.com/creating-user-input-dialog/
 
 
+
+select 
+customer_number,
+start_validity_date,
+end_validity_date
+from dim_osx_customer
+where case when start_validity_date <= to_date('30-SEP-2019') 
+            AND end_validity_date BETWEEN TO_DATE('01-SEP-2019') AND TO_DATE('30-SEP-2019') THEN 1
+           WHEN start_validity_date BETWEEN to_date('01-SEP-2019') AND to_date('30-SEP-2019') AND end_validity_date >=to_date('30-sep-2019') then 1
+           ELSE 0 END =1
+
+
 import PyPDF2
 import os
 import re
